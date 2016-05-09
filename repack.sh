@@ -14,6 +14,7 @@ set -e
 
 IMG=$1
 
+chmod 0755 ${IMG}-ramdisk
 cd ${IMG}-ramdisk
 find . | cpio -o -H newc | gzip > ../${IMG}-ramdisk.cpio.gz
 cd ..
